@@ -32,3 +32,7 @@ for(let s = 0; s < arr.length; s++){
     PII: getPII(arr[s]["value"]),
   });
 }
+
+for(let j = 0; j < detected.length; j++){
+  console.log(`Key path: ${detected[j].key}, Value: ${detected[j].value}, Type of pii: ${detected[j].PII}`);
+}
