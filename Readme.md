@@ -8,7 +8,7 @@
 ## How to run
 
 ```bash
-tsc detection.ts
+tsc detection.ts --resolveJsonModule
 
 node detection.js
 ```

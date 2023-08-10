@@ -1,5 +1,5 @@
-import { getPII } from "./utils";
-import { heartbeat_event } from "./data";
+import { getPII } from "./utils/utilities";
+import { heartbeat_event } from "./data/detection_data";
 
 let str: string = "";
 let arr: { key: string; value: any }[] = [];
