@@ -5,6 +5,8 @@ export let name_count = 0;
 export let email_count = 0;
 export let address_count = 0;
 export let ip_count = 0;
+export let browser_name_count = 0;
+export let os_count = 0;
 
 export function getPII(data: string): string {
   for (let item of rules) {
@@ -19,6 +21,10 @@ export function getPII(data: string): string {
       if (item.name == "IP Address") ip_count++;
 
       if (item.name == "Address") address_count++;
+
+      if (item.name == "Browser Name") browser_name_count++;
+
+      if (item.name == "OS name") os_count++;
       
       return item.name;
     }
