@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import { detect } from '../detection'
 import { user_data } from "../data/detection_data";
-import { total_count, name_count, email_count, address_count, ip_count, os_count, browser_name_count } from '../utils/utilities';
+import { total_count, name_count, email_count, address_count, ip_count, os_count, browser_name_count, phonenumber_count } from '../utils/utilities';
 
 describe("Testing number of pii", () => {
     try{
@@ -37,5 +37,9 @@ describe("Testing number of pii", () => {
 
     it("os count check", function () {
       expect(browser_name_count).eq(0);
+    });
+
+    it("phone number check", function () {
+        expect(phonenumber_count).eq(1);
     });
 });

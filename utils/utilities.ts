@@ -7,6 +7,7 @@ export let address_count = 0;
 export let ip_count = 0;
 export let browser_name_count = 0;
 export let os_count = 0;
+export let phonenumber_count = 0;
 
 export function getPII(data: string): string {
   for (let item of rules) {
@@ -25,6 +26,8 @@ export function getPII(data: string): string {
       if (item.name == "Browser Name") browser_name_count++;
 
       if (item.name == "OS name") os_count++;
+
+      if (item.name == "Indian Phone Number") phonenumber_count++;
       
       return item.name;
     }
