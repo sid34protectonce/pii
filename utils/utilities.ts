@@ -34,3 +34,11 @@ export function getPII(data: string): string {
   }
   return "No PII";
 }
+
+export function PrintData(data: { key: string; value: any; PII: string }[]) {
+  for (let j = 0; j < data.length; j++) {
+    console.log(
+      `Key path: ${data[j].key}, Value: ${data[j].value}, Type of pii: ${data[j].PII}`
+    );
+  }
+}
