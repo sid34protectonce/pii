@@ -1,5 +1,6 @@
 import { getPII } from "./utils/utilities";
-import { heartbeat_event } from "./data/detection_data";
+import { user_data } from "./data/detection_data";
+import 'dotenv/config';
 
 let str: string = "";
 let arr: { key: string; value: any }[] = [];
@@ -21,7 +22,7 @@ export function detect(data: any, parent: string = "") {
   }
 }
 
-detect(heartbeat_event, str);
+detect(user_data, str);
 
 export let detected: { key: string; value: any; PII: string }[] = [];
 
@@ -33,6 +34,7 @@ for(let s = 0; s < arr.length; s++){
   });
 }
 
-for(let j = 0; j < detected.length; j++){
-  console.log(`Key path: ${detected[j].key}, Value: ${detected[j].value}, Type of pii: ${detected[j].PII}`);
-}
+
+// for(let j = 0; j < detected.length; j++){
+//   console.log(`Key path: ${detected[j].key}, Value: ${detected[j].value}, Type of pii: ${detected[j].PII}`);
+// }

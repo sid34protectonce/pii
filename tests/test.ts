@@ -1,11 +1,11 @@
 import { expect } from 'chai';
 import { detect } from '../detection'
-import { heartbeat_event } from "../data/detection_data";
+import { user_data } from "../data/detection_data";
 import { total_count, name_count, email_count, address_count, ip_count, os_count, browser_name_count } from '../utils/utilities';
 
 describe("Testing number of pii", () => {
     try{
-        detect(heartbeat_event);
+        detect(user_data);
     }
     catch(error){
         throw error
