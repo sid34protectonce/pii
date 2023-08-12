@@ -5,7 +5,7 @@
 3. The detection code is in detetion.ts
 4. The file data.ts is used for dummy data
 
-## How to run
+## How to run?
 
 ```bash
 tsc detection.ts --resolveJsonModule
