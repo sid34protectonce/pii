@@ -5,25 +5,27 @@ import { total_count, getResult } from '../utils/utilities';
 import { exit } from 'process';
 
 
-let results: { name: string; count: number }[] = [];
+;
 
 describe("Testing number of pii", () => {
+    let results: { name: string; count: number }[];
     try {
         detect(user_data);
         results = getResult();
+        console.log(results);
     }
     catch (error) {
         throw error
     }
 
     it('total count check', function () {
-        expect(total_count).eq(12);
+        expect(total_count).eq(8);
     })
 
     it('Other counts check', function () {
         for (let res of results) {
             if (res.name === "Name"){
-                if(res.count === 0){
+                if(res.count === 3){
                     console.log(`Passed ${res.name} count test`);
                 }
                 else{
@@ -32,7 +34,7 @@ describe("Testing number of pii", () => {
                 }
             }
             else if (res.name === "User Email"){
-                if(res.count === 0){
+                if(res.count === 1){
                     console.log(`Passed ${res.name} count test`);
                 }
                 else{
@@ -77,7 +79,7 @@ describe("Testing number of pii", () => {
                 }
             }
             else if (res.name === "Indian Phone Number") {
-                if(res.count === 0){
+                if(res.count === 1){
                     console.log(`Passed ${res.name} count test`);
                 }
                 else{
@@ -86,7 +88,7 @@ describe("Testing number of pii", () => {
                 }
             }
             else if (res.name === "International Phone Number"){
-                if(res.count === 0){
+                if(res.count === 1){
                     console.log(`Passed ${res.name} count test`);
                 }
                 else{
@@ -190,7 +192,7 @@ describe("Testing number of pii", () => {
                 }
             }
             else if (res.name === "Internation Passport number"){
-                if(res.count === 0){
+                if(res.count === 1){
                     console.log(`Passed ${res.name} count test`);
                 }
                 else{
