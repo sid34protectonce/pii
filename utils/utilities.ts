@@ -35,6 +35,7 @@ export function getPII(data: string): string {
       total_count++;
 
       if(item.name === "Name") name_count++;
+      else if (item.name === "URL") url_count++;
       else if (item.name === "User Email") email_count++;
       else if (item.name === "IP Address") ip_count++;
       else if (item.name === "Address") address_count++;
@@ -58,7 +59,6 @@ export function getPII(data: string): string {
       else if (item.name === "Internation Passport number") passport_count++;
       else if (item.name === "financial_count") financial_count++;
       else if (item.name === "Geolocation (Latitude)") geolocation_count++; 
-      else if (item.name === "URL") url_count++;
       else if (item.name === "Indian Vechical Registration Number") indian_vechical_registration_number_count++;
       else if (item.name === "IMEI") IMEI_count++;
       else if (item.name === "Addhar Card") addhar_card_count++;
@@ -149,6 +149,10 @@ export function getResult(): { name: string; count: number }[] {
       name: "PAN CARD",
       count: pan_card_count,
     },
+    {
+      name: "URL",
+      count: url_count,
+    }
   ];
 
   return result;

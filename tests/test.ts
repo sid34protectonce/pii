@@ -1,6 +1,7 @@
 import { expect } from 'chai';
 import { detect } from '../detection'
 import { user_data } from "../data/detection_data";
+import { event_data } from '../data/actual_data';
 import { total_count, getResult } from '../utils/utilities';
 import { exit } from 'process';
 
@@ -10,7 +11,7 @@ import { exit } from 'process';
 describe("Testing number of pii", () => {
     let results: { name: string; count: number }[];
     try {
-        detect(user_data);
+        detect(event_data);
         results = getResult();
         console.log(results);
     }
