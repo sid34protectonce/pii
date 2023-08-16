@@ -35,8 +35,8 @@ export function getPII(data: string): string {
       total_count++;
 
       if(item.name === "Name") name_count++;
-      else if (item.name === "OS name") os_count++;
       else if (item.name === "Browser Name") browser_name_count++;
+      else if (item.name === "OS name") os_count++;
       else if (item.name === "URL") url_count++;
       else if (item.name === "User Email") email_count++;
       else if (item.name === "IP Address") ip_count++;
@@ -58,11 +58,11 @@ export function getPII(data: string): string {
       else if (item.name === "financial_count") financial_count++;
       else if (item.name === "Geolocation (Latitude)") geolocation_count++;
       else if (item.name === "Indian Vechical Registration Number")
-        indian_vechical_registration_number_count++;
+      indian_vechical_registration_number_count++;
       else if (item.name === "IMEI") IMEI_count++;
       else if (item.name === "Addhar Card") addhar_card_count++;
       else if (item.name === "PAN CARD") pan_card_count++;
-      
+    
       return item.name;
     }
   }
