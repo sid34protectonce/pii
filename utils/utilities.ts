@@ -1,4 +1,5 @@
 import rules = require('../rules.json');
+import { detected } from '../detection';
 
 export let total_count = 0;
 let name_count = 0;
@@ -155,4 +156,12 @@ export function getResult(): { name: string; count: number }[] {
   ];
 
   return result;
+}
+
+export function printDetected(){
+  for (let j = 0; j < detected.length; j++) {
+    console.log(
+      `Key path: ${detected[j].key}, Value: ${detected[j].value}, Type of pii: ${detected[j].PII}`
+    );
+  }
 }

@@ -4,11 +4,13 @@ import { user_data } from "../data/detection_data";
 import { event_data } from '../data/actual_data';
 import { total_count, getResult } from '../utils/utilities';
 import { exit } from 'process';
+import { detected } from '../detection';
 
 describe("Testing number of pii", () => {
     let results: { name: string; count: number }[];
+    let detected_data = detected
     try {
-        detect(event_data);
+        detected_data = detect(event_data);
         results = getResult();
         console.log(results);
     }
