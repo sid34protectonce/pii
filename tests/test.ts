@@ -5,9 +5,6 @@ import { event_data } from '../data/actual_data';
 import { total_count, getResult } from '../utils/utilities';
 import { exit } from 'process';
 
-
-;
-
 describe("Testing number of pii", () => {
     let results: { name: string; count: number }[];
     try {
@@ -109,7 +106,7 @@ describe("Testing number of pii", () => {
             }
             else if (
               res.name ===
-              "Credit Card Number (VISA, MASTERCARD, AMERICAN EXPRESS, Diners Club, Diners Club, JCB"
+              "Credit Card Number"
             ){
                 if(res.count === 0){
                     console.log(`Passed ${res.name} count test`);

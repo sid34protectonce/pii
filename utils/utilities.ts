@@ -35,19 +35,17 @@ export function getPII(data: string): string {
       total_count++;
 
       if(item.name === "Name") name_count++;
+      else if (item.name === "OS name") os_count++;
+      else if (item.name === "Browser Name") browser_name_count++;
       else if (item.name === "URL") url_count++;
       else if (item.name === "User Email") email_count++;
       else if (item.name === "IP Address") ip_count++;
+      else if (item.name === "Credit Card Number") credit_card_number_count++;
       else if (item.name === "Address") address_count++;
-      else if (item.name === "Browser Name") browser_name_count++;
-      else if (item.name === "OS name") os_count++;
       else if (item.name === "Indian Phone Number") phone_number_count++;
-      else if (item.name === "International Phone Number") international_phone_number_count++;
+      else if (item.name === "International Phone Number")
+        international_phone_number_count++;
       else if (item.name === "Bank Account Number") bank_account_number_count++;
-      else if (
-        item.name ===
-        "Credit Card Number (VISA, MASTERCARD, AMERICAN EXPRESS, Diners Club, Diners Club, JCB"
-      ) credit_card_number_count++;
       else if (item.name === "Debit Card") debit_card_count++;
       else if (item.name === "MAC Address") mac_address_count++;
       else if (item.name === "IMSI") imsi_count++;
@@ -58,8 +56,9 @@ export function getPII(data: string): string {
       else if (item.name === "Gender") gender_count++;
       else if (item.name === "Internation Passport number") passport_count++;
       else if (item.name === "financial_count") financial_count++;
-      else if (item.name === "Geolocation (Latitude)") geolocation_count++; 
-      else if (item.name === "Indian Vechical Registration Number") indian_vechical_registration_number_count++;
+      else if (item.name === "Geolocation (Latitude)") geolocation_count++;
+      else if (item.name === "Indian Vechical Registration Number")
+        indian_vechical_registration_number_count++;
       else if (item.name === "IMEI") IMEI_count++;
       else if (item.name === "Addhar Card") addhar_card_count++;
       else if (item.name === "PAN CARD") pan_card_count++;
@@ -98,7 +97,7 @@ export function getResult(): { name: string; count: number }[] {
       count: bank_account_number_count,
     },
     {
-      name: "Credit Card Number (VISA, MASTERCARD, AMERICAN EXPRESS, Diners Club, Diners Club, JCB",
+      name: "Credit Card Number",
       count: credit_card_number_count,
     },
     {
@@ -152,7 +151,7 @@ export function getResult(): { name: string; count: number }[] {
     {
       name: "URL",
       count: url_count,
-    }
+    },
   ];
 
   return result;
